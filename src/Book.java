@@ -10,9 +10,9 @@ public class Book implements LibraryItem, Borrowable {
     final private String LOCATION_SHELF = "shelf";
     final private String LOCATION_CHECKED_OUT = "checked out";
     final private int MAX_CHECKOUT_DAY = 30;
-    final int GRACE_PERIOD_DAYS = 3;
-    final BigDecimal FEE_PER_DAY = new BigDecimal("0.05");
-    final int DAYS_TILL_CHARGED = 30;
+    private final int GRACE_PERIOD_DAYS = 3;
+    private final BigDecimal FEE_PER_DAY = new BigDecimal("0.05");
+    private final int DAYS_TILL_CHARGED = 30;
     private String title;
     private String category;
     private String location;
@@ -77,26 +77,26 @@ public class Book implements LibraryItem, Borrowable {
 
     @Override
     public BigDecimal getFeePerDay() {
-        return null;
+        return FEE_PER_DAY;
     }
 
     @Override
     public int getDaysTillCharged() {
-        return 0;
+        return DAYS_TILL_CHARGED;
     }
 
     @Override
     public Date getCheckoutDate() {
-        return null;
+        return checkOutDate;
     }
 
     @Override
     public int getGracePeriodDays() {
-        return 0;
+        return GRACE_PERIOD_DAYS;
     }
 
     @Override
     public int getMaxCheckoutDays() {
-        return 0;
+        return MAX_CHECKOUT_DAY;
     }
 }
