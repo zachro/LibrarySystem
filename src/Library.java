@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -47,6 +48,21 @@ public class Library {
     }
 
     /**
+     * Returns a list of items matching the given category.
+     * @param category The category to search for
+     * @return A list of matching LibraryItems
+     */
+    public List<LibraryItem> getItemsByCategory(String category) {
+        List<LibraryItem> list = new ArrayList<>();
+        for (LibraryItem item : libraryItems) {
+            if (item.getCategory().equals(category)) {
+                list.add(item);
+            }
+        }
+        return list;
+    }
+
+    /**
      * Checks an item out from the library.
      * @param item
      */
@@ -69,7 +85,7 @@ public class Library {
             BigDecimal fee = item.getPrice();
             member.addToLateFees(fee);
         }
-        else if (daysCheckedOut > gracePeriod) {
+        else if (daysCheckedOut > gracePeriod + item.getMaxCheckoutDays()) {
             BigDecimal feePerDay = item.getFeePerDay();
             BigDecimal fee = feePerDay.multiply(new BigDecimal(daysCheckedOut));
             member.addToLateFees(fee);
