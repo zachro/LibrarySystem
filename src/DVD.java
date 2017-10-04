@@ -2,13 +2,13 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
- * Class that iumpelments DVD items.
+ * Class that implements DVD items.
  */
 
 public class DVD implements LibraryItem, Borrowable {
-    final private String LOCATION_COUNTER = "counter";
-    final private String LOCATION_CHECKED_OUT = "checked out";
-    final private int MAX_CHECKOUT_DAY = 5;
+    private final String LOCATION_COUNTER = "counter";
+    private final String LOCATION_CHECKED_OUT = "checked out";
+    private final int MAX_CHECKOUT_DAY = 5;
     private final int GRACE_PERIOD_DAYS = 1;
     private final BigDecimal FEE_PER_DAY = new BigDecimal("0.50");
     private  final int DAYS_TILL_CHARGED = 7;
@@ -19,6 +19,13 @@ public class DVD implements LibraryItem, Borrowable {
     private Date checkOutDate;
     private BigDecimal price;
 
+    /**
+     * Constructor that creates DVD objects
+     * @param title contains DVD title
+     * @param category contains DVD category
+     * @param location contains location of DVD
+     * @param price contains price of DVD
+     */
     public DVD(String title, String category, String location, BigDecimal price){
         this.title = title;
         this.category = category;
