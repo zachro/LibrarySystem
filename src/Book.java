@@ -7,9 +7,9 @@ import java.util.Date;
  */
 
 public class Book implements LibraryItem, Borrowable {
-    final private String LOCATION_SHELF = "shelf";
-    final private String LOCATION_CHECKED_OUT = "checked out";
-    final private int MAX_CHECKOUT_DAY = 30;
+    private final String LOCATION_SHELF = "shelf";
+    private final String LOCATION_CHECKED_OUT = "checked out";
+    private final int MAX_CHECKOUT_DAY = 30;
     private final int GRACE_PERIOD_DAYS = 3;
     private final BigDecimal FEE_PER_DAY = new BigDecimal("0.05");
     private final int DAYS_TILL_CHARGED = 30;
@@ -20,6 +20,13 @@ public class Book implements LibraryItem, Borrowable {
     private Date checkOutDate;
     private BigDecimal price;
 
+    /**
+     * Constructor to create a book object.
+     * @param title contains title for Book
+     * @param category contains category for Book
+     * @param location contains location for the Book
+     * @param Price contains price of the Book
+     */
     public Book(String title, String category, String location, BigDecimal Price){
         this.title = title;
         this.category = category;
