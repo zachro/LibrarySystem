@@ -17,11 +17,11 @@ public class Reference implements LibraryItem {
         this.title = title;
     }
 
-    @Override public void setCategory(String category) {
-        this.category = category;
+    @Override public String getCategory() {
+        return category;
     }
 
-    @Override public void setCategory() {
+    @Override public void setCategory(String category) {
         this.category = category;
     }
 
@@ -29,7 +29,7 @@ public class Reference implements LibraryItem {
         return location;
     }
 
-    @Override public void setLocation() {
-        location = "counter";
+    @Override public void setLocation(String location) {
+        location = location;
     }
 }
