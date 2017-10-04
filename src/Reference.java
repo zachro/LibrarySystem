@@ -1,2 +1,35 @@
 public class Reference implements LibraryItem {
+    public String title;
+    public String category;
+    public String location = "counter";
+
+
+    public Reference(String title, String category) {
+        this.title = title;
+        this.category = category;
+    }
+
+    @Override public String getTitle() {
+        return title;
+    }
+
+    @Override public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override public void setCategory(String category) {
+        this.category = category;
+    }
+
+    @Override public void setCategory() {
+        this.category = category;
+    }
+
+    @Override public String getLocation() {
+        return location;
+    }
+
+    @Override public void setLocation() {
+        location = "counter";
+    }
 }
