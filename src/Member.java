@@ -5,7 +5,7 @@ public class Member {
     private String firstName;
     private String lastName;
     private BigDecimal lateFees;
-    public List<LibraryItem> checkedOutItems;
+    private List<LibraryItem> checkedOutItems;
 
     public Member(String firstName, String lastName) {
         this.firstName = firstName;
@@ -29,7 +29,7 @@ public class Member {
         return checkedOutItems;
     }
 
-    public void addToListOfItems(LibraryItem passedItem) {
+    public void addToCheckedOutItems(LibraryItem passedItem) {
         checkedOutItems.add(passedItem);
     }
 
