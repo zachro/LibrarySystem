@@ -2,32 +2,35 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public class Member {
-    private String firstName = "Santa";
-    private String lastName = "Claus";
+    private String firstName;
+    private String lastName;
     private BigDecimal lateFees;
-    public List<LibraryItem> listOfItems;
+    public List<LibraryItem> checkedOutItems;
 
-    public Member(String firstName, String lastName){
+    public Member(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
         lateFees = new BigDecimal(0);
     }
-    public String getName(){
+
+    public String getName() {
         return (firstName + " " + lastName);
     }
-    public void addToLateFees(BigDecimal lateFee){
+
+    public void addToLateFees(BigDecimal lateFee) {
         lateFees.add(lateFee);
     }
-    public BigDecimal getLateFees(){
+
+    public BigDecimal getLateFees() {
         return lateFees;
     }
-    public List<LibraryItem> getListOfItems(){
-        return listOfItems;
+
+    public List<LibraryItem> getCheckedOutItems() {
+        return checkedOutItems;
     }
-    public void addToListOfItems(List <LibraryItem> passedItem){
-        listOfItems.add(passedItem);
+
+    public void addToListOfItems(LibraryItem passedItem) {
+        checkedOutItems.add(passedItem);
     }
-    //        public void removeFromLateFees(Items returnedBook){
-    //
-    //        }
+
 }
