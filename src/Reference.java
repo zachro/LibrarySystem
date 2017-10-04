@@ -1,7 +1,7 @@
 public class Reference implements LibraryItem {
-    public String title;
-    public String category;
-    public String location = "counter";
+    private String title;
+    private String category;
+    private String location = "counter";
 
 
     public Reference(String title, String category) {
