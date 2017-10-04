@@ -1,12 +1,20 @@
 import java.math.BigDecimal;
 import java.util.List;
 
+/**
+ * Defines library member with late fees and all currently checked out items.
+ */
 public class Member {
     private String firstName;
     private String lastName;
     private BigDecimal lateFees;
     private List<LibraryItem> checkedOutItems;
 
+    /**
+     * Creates new Member object.
+     * @param firstName Provided Member first name.
+     * @param lastName rovided Member last name.
+     */
     public Member(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -29,8 +37,8 @@ public class Member {
         return checkedOutItems;
     }
 
-    public void addToCheckedOutItems(LibraryItem passedItem) {
-        checkedOutItems.add(passedItem);
+    public void addToCheckedOutItems(LibraryItem itemToAdd) {
+        checkedOutItems.add(itemToAdd);
     }
 
 }
