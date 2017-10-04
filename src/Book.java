@@ -1,12 +1,18 @@
-
-
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+/**
+ * Class that implements Book items.
+ */
+
 public class Book implements LibraryItem, Borrowable {
     final private String LOCATION_SHELF = "shelf";
     final private String LOCATION_CHECKED_OUT = "checked out";
+    final private int MAX_CHECKOUT_DAY = 30;
+    final int GRACE_PERIOD_DAYS = 3;
+    final BigDecimal FEE_PER_DAY = new BigDecimal("0.05");
+    final int DAYS_TILL_CHARGED = 30;
     private String title;
     private String category;
     private String location;
@@ -69,4 +75,28 @@ public class Book implements LibraryItem, Borrowable {
         this.category = category;
     }
 
+    @Override
+    public BigDecimal getFeePerDay() {
+        return null;
+    }
+
+    @Override
+    public int getDaysTillCharged() {
+        return 0;
+    }
+
+    @Override
+    public Date getCheckoutDate() {
+        return null;
+    }
+
+    @Override
+    public int getGracePeriodDays() {
+        return 0;
+    }
+
+    @Override
+    public int getMaxCheckoutDays() {
+        return 0;
+    }
 }
