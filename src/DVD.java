@@ -1,2 +1,69 @@
+import java.math.BigDecimal;
+import java.util.Date;
+
 public class DVD implements LibraryItem, Borrowable {
+    final private String LOCATION_COUNTER = "counter";
+    final private String LOCATION_CHECKED_OUT = "checked out";
+    private String title;
+    private String category;
+    private String location;
+    private boolean checkedOut;
+    private Date checkOutDate;
+    private BigDecimal price;
+
+    public DVD(String title, String category, String location, BigDecimal price){
+        this.title = title;
+        this.category = category;
+        this.location = location;
+        this.price = price;
+    }
+    @Override
+    public String getTitle() {
+        return title;
+    }
+
+    @Override
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    @Override
+    public String getCategory() {
+        return category;
+    }
+
+    @Override
+    public String getLocation() {
+        return location;
+    }
+
+    @Override
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    @Override
+    public void checkIn() {
+        location = LOCATION_COUNTER;
+        checkedOut = false;
+        checkOutDate = null;
+    }
+
+    @Override
+    public void checkOut() {
+        location = LOCATION_CHECKED_OUT;
+        checkedOut = true;
+        checkOutDate = new Date();
+    }
+
+    @Override
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    @Override
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
 }
