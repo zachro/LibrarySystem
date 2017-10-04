@@ -8,7 +8,7 @@ public class Member {
     private String firstName;
     private String lastName;
     private BigDecimal lateFees;
-    private List<LibraryItem> checkedOutItems;
+    private List<Borrowable> checkedOutItems;
 
     /**
      * Creates new Member object.
@@ -33,11 +33,11 @@ public class Member {
         return lateFees;
     }
 
-    public List<LibraryItem> getCheckedOutItems() {
+    public List<Borrowable> getCheckedOutItems() {
         return checkedOutItems;
     }
 
-    public void addToCheckedOutItems(LibraryItem itemToAdd) {
+    public void addToCheckedOutItems(Borrowable itemToAdd) {
         checkedOutItems.add(itemToAdd);
     }
 
