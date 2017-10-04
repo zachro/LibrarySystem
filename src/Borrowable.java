@@ -1,11 +1,13 @@
 import java.math.BigDecimal;
+import java.util.Date;
 
 public interface Borrowable {
-    public void checkOut();
-    public void checkIn();
-    public BigDecimal getPrice();
-    public int getMaxCheckoutDays();
-    public int getGracePeriodDays();
-    public BigDecimal getFeePerDay();
-    public int getDaysTillCharged();
+    void checkOut();
+    void checkIn();
+    Date getCheckoutDate();
+    BigDecimal getPrice();
+    int getMaxCheckoutDays();
+    int getGracePeriodDays();
+    BigDecimal getFeePerDay();
+    int getDaysTillCharged();
 }
